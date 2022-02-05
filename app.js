@@ -5,6 +5,8 @@ const path = require("path");
 
 const app = express();
 
+const authRoutes = require("./routes/auth");
+
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
@@ -19,10 +21,6 @@ app.use((req,res,next) => {
   next();
 })
 
-app.use((req, res, next) =>{
-	res.json({
-		message: "Hello World"
-	})
-});
+app.use("/auth", authRoutes);
 
 app.listen(process.env.PORT || 8080);
