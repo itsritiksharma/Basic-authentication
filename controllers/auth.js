@@ -4,6 +4,8 @@ const bcrypt = require("bcrypt");
 
 const ObjectId = mongoose.ObjectId;
 
+const { validationResult } = require("express-validator");
+
 const User = require("../models/user");
 
 // CHECK IF THE USER ALREADY EXISTS, HASH THE PASSWORD, AND GENERATE THE TOKEN.
