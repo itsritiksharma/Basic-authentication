@@ -2,6 +2,8 @@ const express = require("express");
 
 const router = express.Router();
 
+const authController = require("../controllers/auth");
+
 // /auth/signup => POST: "ADD USER IN DATABASE"
 router.post("/signup",authController.postSignup);
 
